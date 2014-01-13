@@ -1,6 +1,6 @@
 <?php
-namespace mods {
-	interface I_SESSION extends singularity
+namespace NS_Mods {
+	interface I_SESSION extends I_Singularity
 	{
 		function get_clientKey();
 		function get_clientWord();
@@ -9,7 +9,7 @@ namespace mods {
 		function sign_user($username);
 	}
 	define('SESSIONDIR', dirname(loader::baseUrl) . '/sessions');
-	class session implements I_SESSION
+	class Session implements I_SESSION
 	{
 		//>>> singularity mode
 		private static $self = null;

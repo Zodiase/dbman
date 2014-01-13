@@ -1,11 +1,9 @@
 <?php
-namespace mods {
-	class request implements singularity
-	{
+namespace NS_Mods {
+	class Request implements I_Singularity {
 		//>>> singularity mode
 		protected static $self = null;
-		public static function instance()
-		{
+		public static function instance() {
 			if (self::$self === null) {
 				self::$self = new self;
 			}
@@ -16,16 +14,15 @@ namespace mods {
 		private $args = array();
 		private $postArgs = array();
 		private $getArgs = array();
-		private function __construct()
-		{
+		private function __construct() {
 			$modQueryName = 'mod';
 			if (array_key_exists($modQueryName, $_GET)) {
 				switch (strtolower($_GET[$modQueryName])) {
 					default:
-						$this->mod = 'error';
+						$this->mod = 'Error';
 				}
 			} else {
-				$this->mod = 'client';
+				$this->mod = 'Client';
 			}
 			
 			foreach ($_GET as $key => $data) {
@@ -36,31 +33,26 @@ namespace mods {
 				$this->args[$key] = $this->postArgs[$key] = $data;
 			}
 		}
-		public function modName()
-		{
+		public function modName() {
 			return $this->mod;
 		}
-		public function getArg($argname)
-		{
+		public function getArg($argname) {
 			if (!array_key_exists($argname, $this->args))
 				return '';
 			return $this->args[$argname];
 		}
-		public function getGETArg($argname)
-		{
+		public function getGETArg($argname) {
 			if (!array_key_exists($argname, $this->getArgs))
 				return '';
 			return $this->getArgs[$argname];
 		}
-		public function getPOSTArg($argname)
-		{
+		public function getPOSTArg($argname) {
 			if (!array_key_exists($argname, $this->postArgs))
 				return '';
 			return $this->postArgs[$argname];
 		}
 		//>>> convertion to string
-		public function __toString()
-		{
+		public function __toString() {
 			$count = count($this->args);
 			$result = "mod: {$this->mod} {\n";
 			foreach ($this->args as $key => $data) {

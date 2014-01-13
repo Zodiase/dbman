@@ -1,7 +1,7 @@
 <?php
-namespace mods {
+namespace NS_Mods {
 	define('USERDIR', dirname(loader::baseUrl) . '/users');
-	class user implements singularity
+	class User implements I_Singularity
 	{
 		//>>> singularity mode
 		private static $self = null;

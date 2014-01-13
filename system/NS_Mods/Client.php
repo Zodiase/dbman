@@ -1,11 +1,10 @@
 <?php
-namespace mods {
-	class client implements respondModule
+namespace NS_Mods {
+	class Client implements I_RespondModule
 	{
 		//>>> singularity mode
 		protected static $self = null;
-		public static function instance()
-		{
+		public static function instance() {
 			if (self::$self === null) {
 				self::$self = new self;
 			}
@@ -13,13 +12,10 @@ namespace mods {
 		}
 		//<<< singularity mode
 		
-		public function respond()
-		{
-			$request = request::instance();
-			$session = session::instance();
-			$user = user::instance();
-			
-			global $response;
+		public function respond(&$response) {
+			$request = Request::instance();
+			$session = Session::instance();
+			$user = User::instance();
 			
 			switch ($request->getArg('action')) {
 				case 'restoreSession':
@@ -29,10 +25,7 @@ namespace mods {
 					break;
 				case 'signOut':
 					// initialize status bits
-					$statusBits = 0;
 					$session->sign_user();
-					// fill response
-					$response->statusBits = $statusBits;
 					break;
 				case 'signIn':
 				//	$username = $request->getPOSTArg('username');
@@ -47,7 +40,7 @@ namespace mods {
 						$statusBits |= 0x1; // +1
 					}
 					if (!$user->validateUserName($username)) { // validate username
-					//	$response->log("[CLIENT] warning: username empty.");
+					//	$response->log("[CLIENT] warning: username invalid.");
 						$statusBits |= 0x2; // +2
 					} elseif (!$user->locateUser($username)) { // find user
 					//	$response->log("[CLIENT] warning: user not found.");
