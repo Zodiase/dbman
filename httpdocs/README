@@ -1,0 +1,12 @@
++css
+	this folder stores stylesheet files.
++img
+	this folder stores image files.
+-index.html
+	this file is the client side web interface.
++js
+	this folder stores javascript files.
++prototypes
+	this folder should not be published. it only stores various prototypes.
+-system.php
+	this file only serves as a connection to the main.php in system folder.

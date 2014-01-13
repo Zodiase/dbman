@@ -36,6 +36,10 @@ namespace mods {
 		}
 		private function locate_session_folder()
 		{
+			// make sure session folder exists
+			if (!is_dir(SESSIONDIR))
+				mkdir(SESSIONDIR);
+			// make sure folder for this session exists
 			$this->sessionFolderUrl = SESSIONDIR . "/{$this->clientAddress}";
 			if (!is_dir($this->sessionFolderUrl))
 				mkdir($this->sessionFolderUrl);

@@ -1,0 +1,6 @@
+-main.php
+	this file is the main process that runs the system.
+-mod_loader.php
+	this file is a module/class loader cooperating with php.
++prototypes
+	this folder should not be published. it only stores various prototypes.

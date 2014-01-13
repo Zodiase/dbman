@@ -1,16 +1,28 @@
 <?php
 namespace {
+	/*=== Initializing ===*/
+	// start php session module
 	session_start();
+	// load module loader
 	include_once('mod_loader.php');
+	// initialize module loader
 	$mod_loader = \mods\loader::instance();
+	// prepare response object
 	global $response;
 	$response = new \mods\defaultResponse();
-	
+	// initialize session object
 	$session = \mods\session::instance();
+	// initialize request object
 	$request = \mods\request::instance();
+	
+	/*=== Processing Request ===*/
+	// get the requested module name
 	$modName = $request->modName();
+	// compile module class name (with namespace)
 	$modClassName = "\\mods\\{$modName}";
+	// update target in the response
 	$response->request->target = $modName;
+	// ask the corresponding module to respond to the request
 	if (!class_exists($modClassName)) {
 		$response->log("error: could not found mod {$modName}.");
 	} else {
@@ -21,64 +33,11 @@ namespace {
 			$requestedMod->respond();
 		}
 	}
+	
+	/*=== Outputting ===*/
+	// set header for json
+	header('Content-type: application/json');
+	// print response
 	echo json_encode($response);
 }
-
-
-
-/*
-include_once('connection.php');
-
-if (!connect_default())
-	trigger_error("Could not connect to server", E_USER_ERROR);
-
-if (!array_key_exists('server', $_GET))
-	trigger_error("No server specified", E_USER_ERROR);
-
-// lock target
-
-
-
-switch ($_GET['target']) {
-	case 'server':
-		switch ($_GET['action']) {
-			case 'read': // read server data (database list)
-				break;
-			case 'write': // write server data (modify databases, though not likely)
-				break;
-		}
-		break;
-	case 'db':
-	case 'database':
-		switch ($_GET['action']) {
-			case 'create': // create a table
-				break;
-			case 'alter': // alter a table
-				break;
-			case 'drop': // drop a table
-				break;
-			default: // unknown action
-		}
-		break;
-	case 'tb':
-	case 'table':
-		switch ($_GET['action']) {
-			case 'select': // select entries
-				break;
-			case 'read': // read an entry
-				break;
-			case 'insert': // insert an entry
-				break;
-			case 'update': // update an entry
-				break;
-			case 'delete': // delete an entry
-				break;
-			default: // unknown action
-		}
-		break;
-	default:
-		die('unknown target');
-}
-mysql_close();
-*/
 ?>
