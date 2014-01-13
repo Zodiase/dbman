@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Database Manager</title>
+		<meta name="description" content="Prototype MySQL database manager">
+		<meta name="keywords" content="Database, Database Manager, SQL, MySQL, iCradle">
+		<meta name="viewport" content="width=device-width">
+		<meta name="author" content="Xingchen Hong">
+
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		<link rel="icon" type="image/ico" href="./favicon.ico" />
+
+		<link rel="stylesheet" href="http://library.icradle.net/css.php?l=normalize">
+		<link rel="stylesheet" href="css/notification.css">
+		<link rel="stylesheet" href="css/clipDecor.css">
+		<link rel="stylesheet" href="css/DOMList.css">
+		<link rel="stylesheet" href="css/common.css">
+		<link rel="stylesheet" href="css/signIn.css">
+		<link rel="stylesheet" href="css/main.css">
+		<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+	</head>
+	<body style="background-color: black;">
+		<!--[if lt IE 7]>
+			<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+		<![endif]-->
+		<script src="js/vendor/jquery-2.0.1.min.js"></script>
+		<script src="js/vendor/jquery-ui-1.10.3.no-widget.min.js"></script>
+		<script src="js/plugins.js"></script>
+		<script>
+			var frame1 = clipFrame({showTitle:true,title:'SIDEBAR',transform:{diraction:'horizontal',duration:300},attr:{id:'sideBar'},fixPoint:{x:0,y:0,top:'50px',left:'30px'}});
+			
+			var obj1 = $('<div>').css({
+				display: 'inline-block',
+				width: '200px',
+				height: '200px',
+				backgroundColor: 'red'
+			});
+			var obj1Actions = $('<div class="actions">').appendTo(obj1);
+			var obj1Action1 = $('<button>').attr('id', 'submit').text('✓ submit').appendTo(obj1Actions);
+			
+			var obj2 = $('<div title="Blue">').css({
+				display: 'inline-block',
+				width: '400px',
+				height: '300px',
+				backgroundColor: 'blue'
+			});
+			var obj2Actions = $('<div class="actions">').appendTo(obj2);
+			var obj2Action1 = $('<button>').attr('id', 'submit').text('✓ submit').appendTo(obj2Actions);
+			
+			function swapObj1() {
+				frame1.swap(obj1, 1000);
+			}
+			function containObj1() {
+				frame1.contain(obj1, 1000);
+			}
+			function swapObj2() {
+				frame1.swap(obj2, 1000);
+			}
+			function containObj2() {
+				frame1.contain(obj2, 1000);
+			}
+			
+			var operationPanel = $('<div>').appendTo(document.body);
+			var bt1 = $('<button>').text('Swap Obj1').click(swapObj1).appendTo(operationPanel),
+				bt2 = $('<button>').text('Contain Obj1').click(containObj1).appendTo(operationPanel),
+				bt3 = $('<button>').text('Swap Obj2').click(swapObj2).appendTo(operationPanel),
+				bt4 = $('<button>').text('Contain Obj2').click(containObj2).appendTo(operationPanel);
+			
+			frame1.fix().appendTo(document.body);
+		</script>
+		<!-- Google Analytics: change UA-34856732-1π to be your site's ID. -->
+		<!--
+		<script>
+			var _gaq=[['_setAccount','UA-34856732-1'],['_trackPageview']];
+			(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+			g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+			s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>
+		-->
+	</body>
+</html>

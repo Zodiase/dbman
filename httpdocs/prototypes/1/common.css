@@ -1,0 +1,342 @@
+.aPos {position: absolute}
+.rPos {position: relative}
+.fPos {position: fixed}
+.sPos {position: static}
+.iPos {position: inherit}
+.t50p {top: 50%}
+.r50p {right: 50%}
+.b50p {bottom: 50%}
+.l50p {left: 50%}
+
+.clipDecor {
+	position: relative;
+	border-radius: 3px;
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+.clipDecor .handle {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: auto;
+	bottom: auto;
+	left: 0;
+	width: 10px;
+	height: 10px;
+	margin: -14px;
+	border-width: 0;
+	border-style: solid;
+	border-color: white;
+	border-radius: 0;
+	background-color: white;
+}
+.clipDecor .handle:before {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: auto;
+	bottom: auto;
+	left: 0;
+	width: 50px;
+	height: 50px;
+	margin: 50%;
+	border-width: 1px 0 0 1px;
+	border-style: solid;
+	border-color: white;
+	border-radius: 3px 0 0 0;
+	background-color: transparent;
+	content: '';
+}
+
+.clipDecor .trigger {
+	display: block;
+	position: absolute;
+	top: auto;
+	right: 0;
+	bottom: 0;
+	left: auto;
+	width: 10px;
+	height: 10px;
+	margin: -14px;
+	border-width: 0;
+	border-style: solid;
+	border-color: white;
+	border-radius: 0;
+	background-color: white;
+}
+.clipDecor .trigger:before {
+	display: block;
+	position: absolute;
+	top: auto;
+	right: 0;
+	bottom: 0;
+	left: auto;
+	width: 30px;
+	height: 30px;
+	margin: 50%;
+	border-width: 0 1px 1px 0;
+	border-style: solid;
+	border-color: white;
+	border-radius: 0 0 3px 0;
+	background-color: transparent;
+	content: '';
+}
+
+.clipDecor .actionPanel {
+	position: absolute;
+	top: auto;
+	right: -20px;
+	bottom: 0;
+	left: auto;
+	width: 20px;
+	height: auto;
+	margin: 0;
+	border: 0;
+	padding: 0 0 30px 0;
+	background-color: transparent;
+}
+
+.clipDecor .actionPanel button {
+	display: block;
+	position: relative;
+	width: 20px;
+	height: 20px;
+	margin: 10px 0 0 0;
+	border: 0;
+	border-radius: 0;
+	padding: 0;
+	background-color: transparent;
+	line-height: 10px;
+	text-align: center;
+	font-family: Courier, "Courier New";
+	font-size: 10px;
+	font-weight: bold;
+	color: white;
+	cursor: pointer;
+}
+
+.clipDecor .actionPanel button:before,
+.clipDecor .actionPanel button:after {
+	position: absolute;
+	width: 20%;
+	height: 20%;
+	margin: 2px;
+	border-style: solid;
+	border-color: white;
+	border-radius: 0;
+	content: '';
+}
+.clipDecor .actionPanel button:before {
+	top: 0;
+	right: auto;
+	bottom: auto;
+	left: 0;
+	border-width: 1px 0 0 1px;
+}
+.clipDecor .actionPanel button:after {
+	top: auto;
+	right: 0;
+	bottom: 0;
+	left: auto;
+	border-width: 0 1px 1px 0;
+}
+
+.clipDecor .actionPanel button:hover:before,
+.clipDecor .actionPanel button:hover:after {
+	margin: 1px;
+}
+
+
+.clipDecor .actionPanel button.close {
+	display: block;
+	position: absolute;
+	z-index: 10;
+	top: auto;
+	right: 100%;
+	bottom: 0;
+	left: auto;
+	width: 18px;
+	height: 18px;
+	margin: -18px;
+	background-color: transparent;
+	line-height: 18px;
+	font-size: 16px;
+	color: black;
+}
+.clipDecor .actionPanel button.close:before,
+.clipDecor .actionPanel button.close:after {
+	position: absolute;
+	width: 20%;
+	height: 20%;
+	margin: 2px;
+	border-style: solid;
+	border-color: white;
+	border-radius: 0;
+	content: '';
+}
+.clipDecor .actionPanel button.close:before {
+	top: 0;
+	right: auto;
+	bottom: auto;
+	left: 0;
+	border-width: 1px 0 0 1px;
+}
+.clipDecor .actionPanel button.close:after {
+	top: auto;
+	right: 0;
+	bottom: 0;
+	left: auto;
+	border-width: 0 1px 1px 0;
+}
+
+.clipDecor .actionPanel button.close:hover:before,
+.clipDecor .actionPanel button.close:hover:after {
+	margin: 1px;
+}
+
+/* <<< Form objects */
+form .formRow {
+	position: relative;
+	height: 36px;
+	margin: 0;
+	border: 0;
+	padding: 7px 0;
+	background-color: transparent;
+	text-align: center;
+}
+form .textInputFrame {}
+
+form .textInputFrame label {
+	display: inline-block;
+	float: left;
+	width: 37%;
+	height: 16px;
+	margin: -1px -1px 0 0;
+	border-width: 1px 1px 0 0;
+	border-style: solid;
+	border-color: #ACACAC;
+	border-radius: 0;
+	padding: 10px 0;
+	background-color: transparent;
+	font-family: Courier, "Courier New";
+	font-size: 16px;
+	font-weight: normal;
+	text-align: center;
+	color: #ACACAC;
+}
+form .textInputFrame label[for]:hover {
+	background-color: rgba(255,255,255,0.8);
+	color: black;
+}
+form .textInputFrame input[type="text"],
+form .textInputFrame input[type="password"] {
+	outline: none;
+	display: inline-block;
+	float: right;
+	width: 63%;
+	height: 16px;
+	margin: 0;
+	border-width: 0 0 1px 0;
+	border-style: solid;
+	border-color: #ACACAC;
+	border-radius: 0;
+	padding: 10px 0;
+	background-color: transparent;
+	font-family: Courier, "Courier New";
+	font-size: 16px;
+	font-weight: normal;
+	text-align: center;
+	color: #ACACAC;
+}
+
+form .textInputFrame input[type="text"]:hover {
+	background-color: rgba(255,255,255,0.1);
+}
+
+form .textInputFrame input[type="text"]:focus {
+	background-color: rgba(255,255,255,0.8);
+	color: black;
+}
+
+form .textInputFrame input[type="password"]:hover {
+	background-color: rgba(255,255,255,0.1);
+}
+
+form .textInputFrame input[type="password"]:focus {
+	background-color: rgba(255,255,255,0.8);
+	color: black;
+}
+
+form button {
+	outline: none;
+	position: relative;
+	margin: -1px -1px -1px 0;
+	border-width: 1px 1px 1px 0;
+	border-style: solid;
+	border-color: #ACACAC;
+	border-radius: 0 2px 2px 0;
+	padding: 5px 20px;
+	
+	background: transparent;
+
+	line-height: 26px;
+	font-family: Courier, "Courier New";
+	font-size: 16px;
+	font-weight: normal;
+	color: white;
+	text-shadow: 0px -1px 1px #000000;
+	filter: dropshadow(color=#000000, offx=0, offy=-1);
+}
+
+form button:hover {
+	background-color: rgba(255,255,255,0.8);
+	color: black;
+}
+
+form button:focus {
+	background-color: rgba(255,255,255,0.1);
+}
+
+form button:active {
+	background-color: rgba(255,255,255,0.8);
+	color: black;
+}
+/* >>> Form objects */
+
+html {
+	background-color: black;
+	background-image: url(img/bg_pattern.png)
+}
+
+#logo {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: auto;
+	height: auto;
+	margin: 0;
+	border: 0;
+	padding: 5px;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	color: white;
+	text-align: center;
+	white-space: nowrap;
+}
+
+#signature {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: auto;
+	height: auto;
+	margin: 0;
+	border: 0;
+	padding: 5px;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	font-size: 10px;
+	color: rgba(200,200,200,0.3);
+}

@@ -1,0 +1,10 @@
+/* <<< Sign In Form */
+#signIn_form {
+	display: block;
+	width: 350px;
+	height: 150px;
+	margin: -75px 0 0 -175px;
+	border: 0;
+	padding: 0;
+}
+/* >>> Sign In Form */

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Database Manager</title>
+		<meta name="description" content="Prototype MySQL database manager">
+		<meta name="keywords" content="Database, Database Manager, SQL, MySQL, iCradle">
+		<meta name="viewport" content="width=device-width">
+		<meta name="author" content="Xingchen Hong">
+
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		<link rel="icon" type="image/ico" href="./favicon.ico" />
+
+		<link rel="stylesheet" href="http://library.icradle.net/css.php?l=normalize">
+		<link rel="stylesheet" href="common.css">
+		<link rel="stylesheet" href="signInStatus.css">
+		<style>
+			#messageBoard {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 350px;
+				height: 150px;
+				margin: -75px 0 0 -175px;
+				border: 0;
+				padding: 0;
+			}
+			#messageBoard .content {
+				line-height: 150px;
+				text-align: center;
+				font-family: Verdana, Helvetica, Arial, sans-serif;
+				font-weight: normal;
+				font-size: 14px;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<!--[if lt IE 7]>
+			<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+		<![endif]-->
+		<label id="logo">DBMan</label>
+		<div id="messageBoard" class="clipDecor collapsed">
+			<div class="handle"></div>
+			<div class="content">Test</div>
+			<div class="actionPanel">
+				<button class="close"></button>
+				<button class="cancel">✕</button>
+				<button class="confirm">✓</button>
+			</div>
+			<div class="trigger"></div>
+		</div>
+		<label id="signature">database manager sign-in interface. designed by <a href="http://xc-h.net">Xingchen Hong</a>.</label>
+	</body>
+</html>

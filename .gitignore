@@ -1,0 +1,10 @@
+
+*.graffle
+
+*.psd
+
+*.swp
+
+sessions/*
+
+users/*

@@ -1,0 +1,62 @@
+ul.DOMList {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+ul.DOMList > li {
+	position: relative;
+	margin: 0 0 10px 0;
+}
+ul.DOMList > li > button {
+	position: relative;
+	box-sizing: content-box;
+	width: 100px;
+	height: 12px;
+	margin: 0;
+	border: 0;
+	border-radius: 3px;
+	padding: 10px;
+	background-color: rgba(255,255,255,1);
+	outline: none;
+}
+ul.DOMList > li > button[disabled] {
+	background-color: rgba(255,255,255,0.3);
+}
+/* the before virtual element is used to show the selection indicator (the arrow) */
+ul.DOMList > li > button:before {
+	position: absolute;
+	top: 0;
+	right: auto;
+	bottom: auto;
+	left: 0;
+	width: 0;
+	height: 0;
+	margin: 10px;
+	border-width: 6px;
+	border-style: solid;
+	border-color: transparent;
+	border-radius: 0;
+	padding: 0;
+	background-color: transparent;
+	content: '';
+}
+ul.DOMList > li > button.selected:before {
+	border-color: transparent transparent transparent black;
+}
+/* the after virtual element is used to show the label */
+ul.DOMList > li > button:after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: 10px 10px 10px 24px;
+	border: 0;
+	padding: 0;
+	line-height: 14px;
+	font-family: "Andale Mono", "Courier New";
+	font-size: 14px;
+	font-weight: bold;
+	color: black;
+	content: attr(title);
+}

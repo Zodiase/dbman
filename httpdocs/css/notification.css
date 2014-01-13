@@ -1,0 +1,27 @@
+/* <<< Notification Center */
+.notificationStack {
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	right: 0;
+	margin: 10px 0 0 0;
+	list-style: none;
+}
+.notificationStack
+	.message {
+		-webkit-box-shadow:  0px 4px 4px 0px rgba(0, 0, 0, 0.7);
+		box-shadow:  0px 4px 4px 0px rgba(0, 0, 0, 0.7);
+		margin-top: 1px;
+		border-radius: 1px 0 0 1px;
+		padding: 10px;
+		background-color: rgba(255, 255, 255, 0.2);
+		font-size: 10px;
+		color: white;
+	}
+.notificationStack
+	.message.alert {
+		background-color: rgba(255, 0, 0, 0.2);
+		font-size: 12px;
+		color: white;
+	}
+/* >>> Notification Center */
