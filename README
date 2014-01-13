@@ -1,0 +1,8 @@
++httpdocs
+	the folder for public web access.
++sessions
+	this folder should be protected from public access. it stores session data.
++system
+	this folder should be protected from public access. it contains system files.
++users
+	this folder should be protected from public access. it stores user data.
